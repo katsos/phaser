@@ -714,6 +714,23 @@ var Animation = new Class({
         return this._repeatDelay;
     },
 
+    setFrameRate: function (value)
+    {
+        if (!value) { this.frameRate = 0; }
+        this.frameRate = value;
+
+        if (this.frameRate === 0)
+        {
+            this.msPerFrame = 0;
+        }
+        else
+        {
+            this.msPerFrame = 1000 / this.frameRate;
+        }
+
+        return this.parent;
+    },
+
     /**
      * Sets the amount of time in seconds between repeats.
      * For example, if `repeat` is 2 and `repeatDelay` is 10, the animation will play initially,
