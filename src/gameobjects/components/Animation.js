@@ -716,8 +716,14 @@ var Animation = new Class({
 
     setFrameRate: function (value)
     {
-        if (!value) { this.frameRate = 0; }
-        this.frameRate = value;
+        if (!value)
+        {
+            this.frameRate = 0;
+        }
+        else
+        {
+            this.frameRate = value;
+        }
 
         if (this.frameRate === 0)
         {
